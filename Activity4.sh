@@ -1,23 +1,23 @@
 #!/bin/bash
+
 read -p "Enter your password: " password
 
-# Check if the length is 8 or more characters
-if [ ${#password} -lt 8 ]; then
-    echo "Password should be at least 8 characters long."
-    exit 1
-fi
+len="${#password}"
 
-# Check if the password contains both numbers and letters
-if ! [[ "$password" =~ [0-9] && "$password" =~ [a-zA-Z] ]]; then
-    echo "Password should contain both numbers and letters."
-    exit 1
+if [ $len -ge 8 ]; then
+    if echo "$password" | grep -q '[0-9]' && echo "$password" | grep -q '[A-Z]' && echo "$password" | grep -q '[a-z]'; then
+        echo "Strong password"
+    else
+        if ! echo "$password" | grep -q '[0-9]'; then
+            echo "Password should have numbers."
+        fi
+        if ! echo "$password" | grep -q '[A-Z]'; then
+            echo "Password should have uppercase characters."
+        fi
+        if ! echo "$password" | grep -q '[a-z]'; then
+            echo "Password should have lowercase characters."
+        fi
+    fi
+else
+    echo "Password should have minimum 8 characters"
 fi
-
-# Check if the password contains both uppercase and lowercase letters
-if ! [[ "$password" =~ [a-z] && "$password" =~ [A-Z] ]]; then
-    echo "Password should contain both uppercase and lowercase letters."
-    exit 1
-fi
-
-# If all criteria are met, the password is considered secure
-echo "Password is secure!"
