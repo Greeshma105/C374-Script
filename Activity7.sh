@@ -4,14 +4,14 @@ score=0
 
 question() {
     local question="$1"
-    local correct_answer="$2"
+    local correct="$2"
 
     echo "$question"
     read -p "Enter 'T' for True or 'F' for False: " user_answer
     
 
 
-    if [ "${user_answer^}" == "$correct_answer" ]; then
+    if [ "${user_answer}" == "$correct" ]; then
         echo "Correct!"
         ((score++))
     else
