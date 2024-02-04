@@ -31,5 +31,5 @@ question "8. Neymar is a forward for the Brazil national team." "T"
 question "9. The 2022 World Cup was the first to be held in November-December." "T"
 question "10. Italy has won the FIFA World Cup five times." "F"
 
-# Display final score
+
 echo "Your final score is: $score out of 10"
