@@ -4,15 +4,15 @@ score=0
 
 question() {
     local question="$1"
-    local correct_answer="$2"
+    local answer="$2"
 
     echo "$question"
     read -p "Enter 'T' for True or 'F' for False: " user_answer
     
 
 
-    if [ "${user_answer^}" == "$correct_answer" ]; then
-        echo "Correct!"
+    if [ "${user_answer}" == "$answer" ]; then
+        echo "Correct"
         ((score++))
     else
         echo "Incorrect"
@@ -31,5 +31,4 @@ question "8. Neymar is a forward for the Brazil national team." "T"
 question "9. The 2022 World Cup was the first to be held in November-December." "T"
 question "10. Italy has won the FIFA World Cup five times." "F"
 
-# Display final score
 echo "Your final score is: $score out of 10"
