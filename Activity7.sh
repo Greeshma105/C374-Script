@@ -4,15 +4,24 @@ score=0
 
 question() {
     local question="$1"
+<<<<<<< HEAD
     local answer="$2"
+=======
+    local correct="$2"
+>>>>>>> 07602d89ebd4ffc780f5b73fcc3a2a453b534a18
 
     echo "$question"
     read -p "Enter 'T' for True or 'F' for False: " user_answer
     
 
 
+<<<<<<< HEAD
     if [ "${user_answer}" == "$answer" ]; then
         echo "Correct"
+=======
+    if [ "${user_answer}" == "$correct" ]; then
+        echo "Correct!"
+>>>>>>> 07602d89ebd4ffc780f5b73fcc3a2a453b534a18
         ((score++))
     else
         echo "Incorrect"
