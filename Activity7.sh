@@ -5,20 +5,10 @@ score=0
 question() {
     local question="$1"
     local answer="$2"
-<<<<<<< HEAD
   
     echo "$question"
     read -p "Enter 'T' for True or 'F' for False: " user_answer
     
-
-
-=======
-
-    echo "$question"
-    read -p "Enter 'T' for True or 'F' for False: " user_answer
-    
-    
->>>>>>> 7b612ee16809cd5ad936e0bc10bf70b424a4f45d
     if [ "${user_answer}" == "$answer" ]; then
         echo "Correct"
         ((score++))
@@ -39,9 +29,4 @@ question "8. Neymar is a forward for the Brazil national team." "T"
 question "9. The 2022 World Cup was the first to be held in November-December." "T"
 question "10. Italy has won the FIFA World Cup five times." "F"
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7b612ee16809cd5ad936e0bc10bf70b424a4f45d
 echo "Your final score is: $score out of 10"
